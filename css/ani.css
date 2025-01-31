@@ -1,0 +1,83 @@
+@charset "utf-8" ;
+@font-face {
+    font-family: 'JSArirangHON-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSArirangHON-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gyeonggi_Batang_Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Batang_Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: #333;}
+table {border-collapse: collapse;}
+caption {font-size: 0; color:transparent; text-indent: -99999px; position: absolute; left: -9999px; height: 0; overflow: hidden;}
+
+html, body {height: 100%;font-family: 'Gyeonggi_Batang_Regular'; }
+body {height: 100%;}
+/* .wrap 여러번 사용할 수 있으며 조합이 가능함 - 내용들에 사용*/
+
+/*#wrap id 사용시에 쓰는 것으로 한페이지에 한번만 쓸 수 있는 이름
+큰 레이아웃에 사용함*/
+
+#wrap {background: url(../images/bg.jpg); width: 100%; height: 100vh; background-size: cover; text-align: center; }
+header {width: 80%; height: 50px; border-radius: 90px; background: rgba(255, 255, 255, 0.8); position: absolute; left: 50%; top: 50px; transform: translateX(-50%); display: flex; justify-content: space-around;align-items: center; backdrop-filter:blur(5px); opacity: 0.4;transition: 0.2s;z-index: 1} 
+/*opactiy  전체가 투명해짐*/
+header:hover {opacity:1;}
+header h1 {width: 200px; background: rgb(255, 115, 115);}
+header audio {width: 100px; transition: 1s;} 
+header:hover audio {width: 400px;}
+header nav {width: 800px;}
+header nav .gnb {display: flex;}
+header nav .gnb li {width: 30%;flex-grow: 1; font-size: 18px; text-align: center; border-right: 1px solid #aaa;}
+header nav .gnb li:last-child {border:0;}
+header nav .gnb li a{display: block;}
+
+.textbox {position: absolute; left: 10%;top: 50%; transform: translateY(-50%); font-size: 70px; color:purple; display: flex; gap: 14px;;/*  flex-direction: row-reverse; */ z-index: 1;} 
+.textbox ul {transform-style: preserve-3d; perspective: 80px;}
+/*숫자가 낮을수록 3d수치가 높아진다*/
+.textbox ul li {height: 200px; border: 1px solid rgba(0, 0, 0,0.5); line-height: 100%; font-family: 'JSArirangHON-Regular';}
+.textbox ul li {height: 80px; animation: merong 3s forwards; opacity: 0;position: relative;}
+.textbox ul li.ma {margin-bottom: 30px;border: 1px solid rgba(0, 0, 0,0.5)}
+@keyframes merong{
+    0% {opacity:0; left: -100px; top:100px; transform: rotate(20deg) rotateY(90deg);}
+    100% {opacity:1; left: 0; transform: rotate(0) rotateY(0);}
+}
+.textbox ul:nth-child(1) li:nth-child(1) {animation-delay: 0s;}
+.textbox ul:nth-child(1) li:nth-child(2) {animation-delay: 0.1s;}
+.textbox ul:nth-child(1) li:nth-child(3) {animation-delay: 0.2s;}
+.textbox ul:nth-child(1) li:nth-child(4) {animation-delay: 0.3s;}
+.textbox ul:nth-child(1) li:nth-child(5) {animation-delay: 0.4s;}
+.textbox ul:nth-child(1) li:nth-child(6) {animation-delay: 0.5s;}
+
+.textbox ul:nth-child(2) li:nth-child(1) {animation-delay: 0.6s;}
+.textbox ul:nth-child(2) li:nth-child(2) {animation-delay: 0.7s;}
+.textbox ul:nth-child(2) li:nth-child(3) {animation-delay: 0.8s;}
+.textbox ul:nth-child(2) li:nth-child(4) {animation-delay: 0.9s;}
+.textbox ul:nth-child(2) li:nth-child(5) {animation-delay: 1.0s;}
+.textbox ul:nth-child(2) li:nth-child(6) {animation-delay: 1.1s;}
+
+.snow_box .snow {position: absolute; width: 100%; height: 100%; background: url(../images/flying-dollars-set-b.png);animation: magic1 3s infinite;}
+
+.snow_box .snow:nth-child(1) {animation: snow1 1s infinite linear; }
+@keyframes snow1 {
+    0% {background-position: 0 0;}
+    100% {background-position: 800px 900px;}
+}
+
+.snow_box .snow:nth-child(2) {animation: snow2 2s infinite linear; }
+@keyframes snow2 {
+    0% {background-position: 0 0;}
+    100% {background-position: 400px 500px;}
+}
+
+.snow_box .snow:nth-child(3) {animation: snow3 3s infinite linear; }
+@keyframes snow3 {
+    0% {background-position: 0 0;}
+    100% {background-position: 200px 300px;}
+}
